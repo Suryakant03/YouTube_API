@@ -28,7 +28,7 @@ Now run the below docker-compose commands:
 
 Now you can assess the Application on http://localhost:8000/
     
-
+**Note that you have to wait for atleast 100 seconds for a batch of database to scrape and appear on WebUI**
 ## Setup Manually
 
 
