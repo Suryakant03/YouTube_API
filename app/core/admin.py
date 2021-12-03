@@ -1,5 +1,5 @@
 from django.contrib import admin
-from core.models import Video
+from core import models
 
 
-admin.site.register(Video)
+admin.site.register(models.Video)

@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_filters',
+    'rest_framework',
     'core',
+    'api',
 ]
 
 MIDDLEWARE = [
@@ -117,6 +120,11 @@ USE_L10N = True
 
 USE_TZ = True
 
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 5
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
@@ -127,3 +135,15 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+GCP_API_KEYS = [
+    'AIzaSyDf4iBTTUzFutM7pp0TAGrSFYhYsT8tl3g',
+    'AIzaSyAMQ8v-3QtdYFhJFeUZxyFOmrc93hjJwQI', 
+    'AIzaSyBqUG3yD148PiUZyt64IZWsnG6J2b_nYqM', 
+    'AIzaSyAMQHTnz6PejLHflVYCmlKO5WSf57JAOt8',
+    'AIzaSyCmWnjog6a713RtL2_SmsvEdkhBsecz0Fk',
+]
+
+UPDATE_IN_SECONDS = 100
+
+SEARCH_QUERY = 'cricket'

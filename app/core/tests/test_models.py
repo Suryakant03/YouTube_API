@@ -1,5 +1,5 @@
 from django.test import TestCase
-from core.models import Video
+from core import models
 from datetime import datetime
 
 
@@ -13,7 +13,7 @@ class ModelTests(TestCase):
         video_publishing_datetime = datetime.now()
         video_thumbnail_URLs = 'http://test.com'
 
-        video = Video.objects.create(
+        video = models.Video.objects.create(
             vid=video_id,
             title=video_title,
             description=video_description,
