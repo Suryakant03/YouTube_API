@@ -21,7 +21,7 @@ if not then run below command
 
     pip install docker-compose
 
-Now run the below docker-comose commands:
+Now run the below docker-compose commands:
 
     docker-compose build
     docker-compose up

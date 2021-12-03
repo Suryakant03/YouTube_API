@@ -46,31 +46,31 @@ def collect_data():
             try:
                 vid = item['id']['videoId']
             except Exception as e:
-                print("ERROR shile reading an item:", e)
+                print("ERROR while reading an item:", e)
                 vid = None
 
             try:
                 title = item['snippet']['title']
             except Exception as e:
-                print("ERROR shile reading an item:", e)
+                print("ERROR while reading an item:", e)
                 title = None
 
             try:
                 description = item['snippet']['description']
             except Exception as e:
-                print("ERROR shile reading an item:", e)
+                print("ERROR while reading an item:", e)
                 description = None
 
             try:
                 publishing_datetime = item['snippet']['publishedAt']
             except Exception as e:
-                print("ERROR shile reading an item:", e)
+                print("ERROR while reading an item:", e)
                 publishing_datetime = None
 
             try:
                 thumbnail_URLs = item['snippet']['thumbnails']['default']['url']
             except Exception as e:
-                print("ERROR shile reading an item:", e)
+                print("ERROR while reading an item:", e)
                 thumbnail_URLs = None
 
             try:
@@ -83,7 +83,7 @@ def collect_data():
                 )
                 item_count += 1
             except Exception as e:
-                print("ERROR shile reading an item:", e)
+                print("ERROR while reading an item:", e)
 
     if 'items' in res:
         print("Collected ", len(res['items']), "items, out of which ", item_count, "pushed to database!!!")
