@@ -66,3 +66,10 @@ After the basic settings run following commands:
     python manage.py migrate
     python manage.py runserver --noreload 127.0.0.1:8000
 
+
+
+## Web UI
+
+Django builtin web UI has been used to display and filter the data. 
+![Basic Dashboard to display data](https://github.com/Suryakant03/YouTube_API/blob/main/images/dashboard.png)
+![Basic Dashboard Filters](https://github.com/Suryakant03/YouTube_API/blob/main/images/dashboard_filters.png)
