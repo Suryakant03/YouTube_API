@@ -11,7 +11,7 @@ def collect_data():
     print("Collecting Data...")
     api_keys = settings.GCP_API_KEYS
     curr_time = datetime.now()
-    prv_time = curr_time - timedelta(seconds=settings.UPDATE_IN_SECONDS)
+    prv_time = curr_time - timedelta(seconds=1500)
 
     is_scraped = False
     res = {}
@@ -46,41 +46,44 @@ def collect_data():
             try:
                 vid = item['id']['videoId']
             except Exception as e:
-                print("ERROR while reading an item:", e)
+                # print("ERROR while reading an item:", e)
                 vid = None
 
             try:
                 title = item['snippet']['title']
             except Exception as e:
-                print("ERROR while reading an item:", e)
+                # print("ERROR while reading an item:", e)
                 title = None
 
             try:
                 description = item['snippet']['description']
             except Exception as e:
-                print("ERROR while reading an item:", e)
+                # print("ERROR while reading an item:", e)
                 description = None
 
             try:
                 publishing_datetime = item['snippet']['publishedAt']
             except Exception as e:
-                print("ERROR while reading an item:", e)
+                # print("ERROR while reading an item:", e)
                 publishing_datetime = None
 
             try:
                 thumbnail_URLs = item['snippet']['thumbnails']['default']['url']
             except Exception as e:
-                print("ERROR while reading an item:", e)
+                # print("ERROR while reading an item:", e)
                 thumbnail_URLs = None
 
             try:
-                Video.objects.create(
-                    vid=vid,
-                    title=title,
-                    description=description,
-                    publishing_datetime=publishing_datetime,
-                    thumbnail_URLs=thumbnail_URLs
-                )
+                if Video.objects.filter(vid=vid).exists():
+                    pass
+                else:
+                    Video.objects.create(
+                        vid=vid,
+                        title=title,
+                        description=description,
+                        publishing_datetime=publishing_datetime,
+                        thumbnail_URLs=thumbnail_URLs
+                    )
                 item_count += 1
             except Exception as e:
                 print("ERROR while reading an item:", e)
