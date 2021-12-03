@@ -8,4 +8,3 @@ app_name = 'api'
 urlpatterns = [
     path('videos/', views.VideoViewSet.as_view(), name="video-list")
 ]
-

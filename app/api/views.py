@@ -19,10 +19,7 @@ class VideoViewSet(generics.ListAPIView):
     queryset = Video.objects.all().order_by('-publishing_datetime')
     serializer_class = serializers.VideoSerializer
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
-    filterset_fields = ['vid','title']
+    filterset_fields = ['vid', 'title']
     ordering_fields = ['vid', 'title']
     search_fields = ['title', 'description']
     pagination_class = StandardResultsSetPagination
-
-
-
